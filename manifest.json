@@ -1,0 +1,6 @@
+{
+  "name": "product-detail",
+  "short_name": "product-detail",
+  "start_url": "/",
+  "display": "standalone"
+}
