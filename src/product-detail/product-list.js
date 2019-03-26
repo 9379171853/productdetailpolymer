@@ -34,17 +34,22 @@ class ProductList extends PolymerElement{
     > </iron-ajax>
 
 
-      
-    <vaadin-accordion items={{data}}>
+    <template is ="dom-repeat" items={{data}}>
+    <vaadin-accordion >
       <vaadin-accordion-panel theme="filled">
-      <dom-repeat items="{{item.product-name}}" >
-      <template>
-        <div slot="summary"> prodcut Nme: {{item.product-name}}</div>
-        <div>[[item.product-name]]</div>
+      <div slot="summary"> prodcut Name: [[item.product-name]]</div>
+       <template is="dom-repeat" items={{data}}>
+       <div>[[item.item.product-name]]</div>
+        <div>[[item.product-image-url]]</div>
+        <div>[[item.header-top-right-text]]</div>
+        <div>[[item.header-top-left-text]]</div>
+        <div>[[product-url]]</div>
+        <div>[[header-top-right-url]]</div>
+        <div>[[product-cta-text]]</div>
         </template>
       </vaadin-accordion-panel>  
     </vaadin-accordion>
-    
+    </template>
 
         `
     }
